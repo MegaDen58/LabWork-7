@@ -42,10 +42,13 @@ class Dog extends Animal{
 
     @Override
     public void makeNoise(){
-        System.out.printf("Собака %s издаёт звук %s", getAnimalName(), sound);
+        System.out.printf("Собака %s издаёт звук %s \n", getAnimalName(), sound);
     }
     public void eat(){
-        System.out.printf("Собака %s хочет есть %s", getAnimalName(), getFood());
+        System.out.printf("Собака %s хочет есть %s \n", getAnimalName(), getFood());
+    }
+    public void sleep(){
+        System.out.printf("Собака %s после обследования врача уснула. \n", getAnimalName());
     }
 }
 
@@ -58,10 +61,13 @@ class Cat extends Animal{
 
     @Override
     public void makeNoise(){
-        System.out.printf("Кот %s издаёт звук %s", getAnimalName(), sound);
+        System.out.printf("Кот %s издаёт звук %s \n", getAnimalName(), sound);
     }
     public void eat(){
-        System.out.printf("Кот %s хочет есть %s", getAnimalName(), getFood());
+        System.out.printf("Кот %s хочет есть %s \n", getAnimalName(), getFood());
+    }
+    public void sleep(){
+        System.out.printf("Кот %s после обследования врача уснул. \n", getAnimalName());
     }
 }
 
@@ -74,10 +80,13 @@ class Horse extends Animal{
 
     @Override
     public void makeNoise(){
-        System.out.printf("Конь %s издаёт звук %s", getAnimalName(), sound);
+        System.out.printf("Конь %s издаёт звук %s \n", getAnimalName(), sound);
     }
     public void eat(){
-        System.out.printf("Конь %s хочет есть %s", getAnimalName(), getFood());
+        System.out.printf("Конь %s хочет есть %s \n", getAnimalName(), getFood());
+    }
+    public void sleep(){
+        System.out.printf("Конь %s после обследования врача уснул. \n", getAnimalName());
     }
 }
 
@@ -87,7 +96,7 @@ class Veterinarian extends Animal{
         super(food, location, animalName);
     }
     void treatAnimal(){
-        System.out.printf("Врач приехал в %s, где вылечил %s от отравления от %s", getLocation(), getAnimalName(), getFood());
+        System.out.printf("Врач приехал в %s, где вылечил %s от отравления от %s \n", getLocation(), getAnimalName(), getFood());
     }
 }
 
@@ -109,26 +118,23 @@ public class Main {
             case ("Cat"):
                 Cat cat = new Cat(food, location, name);
                 cat.eat();
-                System.out.println();
                 cat.makeNoise();
-                System.out.println();
                 veterinarian.treatAnimal();
+                cat.sleep();
                 break;
             case ("Dog"):
                 Dog dog = new Dog(food, location, name);
                 dog.eat();
-                System.out.println();
                 dog.makeNoise();
-                System.out.println();
                 veterinarian.treatAnimal();
+                dog.sleep();
                 break;
             case ("Horse"):
-                Horse Horse = new Horse(food, location, name);
-                Horse.eat();
-                System.out.println();
-                Horse.makeNoise();
-                System.out.println();
+                Horse horse = new Horse(food, location, name);
+                horse.eat();
+                horse.makeNoise();
                 veterinarian.treatAnimal();
+                horse.sleep();
                 break;
             default:
                 System.out.println("Введено некорректное название вида животного.");
