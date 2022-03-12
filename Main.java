@@ -39,8 +39,7 @@ class Dog extends Animal{
     public Dog(String food,String location, String animalName){
         super(food, location, animalName);
     }
-
-    @Override
+    
     public void makeNoise(){
         System.out.printf("Собака %s издаёт звук %s \n", getAnimalName(), sound);
     }
@@ -59,7 +58,6 @@ class Cat extends Animal{
         super(food, location, animalName);
     }
 
-    @Override
     public void makeNoise(){
         System.out.printf("Кот %s издаёт звук %s \n", getAnimalName(), sound);
     }
@@ -78,7 +76,6 @@ class Horse extends Animal{
         super(food, location, animalName);
     }
 
-    @Override
     public void makeNoise(){
         System.out.printf("Конь %s издаёт звук %s \n", getAnimalName(), sound);
     }
